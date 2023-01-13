@@ -1,0 +1,1 @@
+No dia 13/01 foi criado o repositório ao qual todos os exercícios serão entregues, à partir do GitHub e organizado conforme o padrão descrito no arquivo de instruções da Trybe chamado 'Portifólio de Exercícios'.
