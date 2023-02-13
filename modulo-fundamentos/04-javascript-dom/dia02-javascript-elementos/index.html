@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Exercício</title>
+    <style>
+      section {
+        border-color: black;
+        border-style: solid;
+      }
+
+      .title {
+        text-align: center;
+      }
+
+      .main-content {
+        background-color: yellow;
+      }
+
+      .main-content .center-content {
+        background-color: red;
+        width: 50%;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .main-content .center-content p {
+        font-style: italic;
+      }
+
+      .main-content .left-content {
+        background-color: green;
+        width: 60%;
+        margin-left: 0;
+        margin-right: auto;
+      }
+
+      .main-content .left-content .small-image {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        border-radius: 100%;
+      }
+
+      .main-content .right-content {
+        background-color: blue;
+        width: 60%;
+        margin-left: auto;
+        margin-right: 0;
+      }
+
+      .main-content .description {
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <script>
+      // COLOQUE SEU CÓDIGO AQUI
+
+      // Questão 01
+      const elementH1 = document.createElement('h1')
+      elementH1.innerText = 'TrybeTrip - Agência de Viagens'
+      document.body.appendChild(elementH1)
+      
+      // Questão 02
+      const createMain = document.createElement('main')
+      createMain.className = 'main-content'
+      document.body.appendChild(createMain)
+    
+      // Questão 03
+      const elementMain = document.querySelector('.main-content')
+      const createSection = document.createElement('section')
+      const section1 = elementMain.appendChild(createSection)
+      section1.className = 'center-content'
+      
+      //Questão 04
+      const createP = document.createElement('p')
+      const firstP = section1.appendChild(createP)
+
+      //Questão 05
+      firstP.innerText = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris dui orci, sodales et eros vitae, facilisis accumsan tellus. Phasellus ultricies vel tellus sed sollicitudin. Nam scelerisque in erat condimentum accumsan. Vestibulum ut pharetra tellus. In id mauris quis felis euismod dictum ut sit amet risus. Proin scelerisque sem eget purus facilisis vestibulum. Pellentesque pulvinar eget odio in dictum. Phasellus facilisis dictum magna, in ultricies nibh commodo at. Integer pellentesque augue quis orci vehicula finibus."
+        
+      //Questões 06
+      const tagCreator = (tagName ,tagFather, classes) => {
+        const creationFunction = document.createElement(tagName)
+        const appendingOnFather = tagFather.appendChild(creationFunction)
+        creationFunction.className = classes
+        return creationFunction
+      }
+
+      const sectionLeft = tagCreator('section', elementMain, 'left-content')
+      const sectionRight = tagCreator('section', elementMain, 'right-content')
+      const imgSectionLeft = tagCreator('img', sectionLeft, 'small-image')
+      imgSectionLeft.src = 'https://picsum.photos/200'
+      const nonOrderedList = tagCreator('ul', sectionRight, 'list')
+
+      const arrayOfNumbers = [
+        'um',
+        'dois',
+        'três',
+        'quatro',
+        'cinco',
+        'seis',
+        'sete',
+        'oito',
+        'nove',
+        'dez'
+      ]
+
+      for (let number of arrayOfNumbers){
+        let listItem = tagCreator('li', nonOrderedList, 'list-item')
+        listItem.innerText = number
+        nonOrderedList.appendChild(listItem)
+      }
+
+      const firstH3 = tagCreator('h3', elementMain, 'description')
+      const secondH3 = tagCreator('h3', elementMain, 'description')
+      const thirdH3 = tagCreator('h3', elementMain, 'description')
+
+      elementH1.classList.add('title')
+   
+    </script>
+  </body>
+</html>
